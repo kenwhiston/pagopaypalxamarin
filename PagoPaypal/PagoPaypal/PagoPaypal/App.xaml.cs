@@ -11,8 +11,10 @@ namespace PagoPaypal
 		{
 			InitializeComponent();
 
-			MainPage = new MainPage();
-		}
+            ///MainPage = new MainPage();
+            // The root page of your application
+            MainPage = new NavigationPage(new MainPage());
+        }
 
 		protected override void OnStart ()
 		{

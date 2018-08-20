@@ -10,14 +10,27 @@
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainPage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\MainPage.xaml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Api\IPayPalApiClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Models\ApiPayPalAmount.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Models\ApiPayPalExecutePaymentResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Models\ApiPayPalGetTokenResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Models\ApiPayPalItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Models\ApiPayPalItemList.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Models\ApiPayPalMakePaymentData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Models\ApiPayPalPayer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Models\ApiPayPalPaymentResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Models\ApiPayPalTransaction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\PayPalApiClient.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)Config.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\PayPalWebView.cs" />
   </ItemGroup>
 </Project>

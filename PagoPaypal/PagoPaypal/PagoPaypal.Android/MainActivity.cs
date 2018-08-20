@@ -6,6 +6,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using XLabs.Ioc;
+using XLabs.Platform.Device;
 
 namespace PagoPaypal.Droid
 {
@@ -19,9 +21,21 @@ namespace PagoPaypal.Droid
 
             base.OnCreate(bundle);
 
+            SetIoc();
+
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
             LoadApplication(new App());
+        }
+
+        private void SetIoc()
+        {
+            var resolverContainer = new SimpleContainer();
+
+            resolverContainer.Register<IDevice>(r => AndroidDevice.CurrentDevice);
+            resolverContainer.RegisterSingle<IPayPalApiClient, PayPalApiClient>();
+
+            Resolver.SetResolver(resolverContainer.GetResolver());
         }
 
     }
