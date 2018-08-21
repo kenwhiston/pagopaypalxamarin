@@ -41,7 +41,7 @@ namespace PagoPaypal
 
 		// Make a payment
 		// Should do validation of the returned data
-		public async Task<PayPalExecutePaymentResult> MakePayment() {
+		public async Task<PayPalExecutePaymentResult> MakePayment(PayPalMakePaymentData infoPago) {
 
 			var accessTokenData = await GetAccessToken();
 			var executePaymentResult = new PayPalExecutePaymentResult();
@@ -55,9 +55,9 @@ namespace PagoPaypal
 
 				// Add data to send
 				restRequest.RequestFormat = DataFormat.Json;
-				// This transaction information should be made dynamic!
-				// Source: https://developer.paypal.com/docs/api/#create-a-payment
-				restRequest.AddBody (new PayPalMakePaymentData {
+                // This transaction information should be made dynamic!
+                // Source: https://developer.paypal.com/docs/api/#create-a-payment
+                /*restRequest.AddBody (new PayPalMakePaymentData {
 					intent = "sale",
 					redirect_urls = new PayPalMakePaymentRedirectUrls {
 						return_url = Config.ReturnUrl,
@@ -91,9 +91,11 @@ namespace PagoPaypal
 							}
 						}
 					}
-				});
+				});*/
 
-				var response = restClient.Execute<PayPalPaymentResponse> (restRequest);
+                restRequest.AddBody(infoPago);
+
+                var response = restClient.Execute<PayPalPaymentResponse> (restRequest);
 
 				executePaymentResult.DisplayError = CheckResponseStatus (response, HttpStatusCode.Created);
 

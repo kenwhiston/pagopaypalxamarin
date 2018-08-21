@@ -12,6 +12,7 @@ namespace PagoPaypal
 {
 	public partial class MainPage : ContentPage
 	{
+        PayPalMakePaymentData infoPago;
 
         public MainPage()
 		{
@@ -20,11 +21,52 @@ namespace PagoPaypal
 
         async void HandlePayPalExpressCheckoutButtonClicked(object sender, EventArgs e)
         {
+
+
+            infoPago = new PayPalMakePaymentData
+            {
+                intent = "sale",
+                redirect_urls = new PayPalMakePaymentRedirectUrls
+                {
+                    return_url = Config.ReturnUrl,
+                    cancel_url = Config.CancelUrl
+                },
+                payer = new PayPalPayer
+                {
+                    payment_method = "paypal"
+                },
+                transactions = new[] {
+                        new PayPalTransaction {
+                            amount = new PayPalAmount {
+                                total = "550",
+                                currency = "MXN",
+                                details = new PayPalAmountDetails {
+                                    subtotal = "500",
+                                    tax = "25",
+                                    shipping = "25"
+                                }
+                            },
+                            item_list = new PayPalItemList {
+                                items = new [] {
+                                    new PayPalItem {
+                                        quantity = "1",
+                                        name = "Booking reservation",
+                                        price = "500",
+                                        currency = "MXN",
+                                        description = "Booking reservation at ABC hotel at 24/03/2015 from 1pm to 4pm.",
+                                        tax = "25"
+                                    }
+                                }
+                            }
+                        }
+                    }
+            };
+
             Device.BeginInvokeOnMainThread(() => paypalButton.IsEnabled = false);
 
             await Resolver
                 .Resolve<IPayPalApiClient>()
-                .MakePayment()
+                .MakePayment(infoPago)
                 .ContinueWith((r) => {
                     var result = r.Result;
 
