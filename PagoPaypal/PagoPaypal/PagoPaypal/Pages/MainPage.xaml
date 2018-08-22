@@ -4,14 +4,57 @@
              xmlns:local="clr-namespace:PagoPaypal"
              x:Class="PagoPaypal.MainPage" Title="PayPal">
 
-    <StackLayout>
-
-        <Button x:Name="paypalButton" Text="Paga con PayPal"
+    <StackLayout Orientation="Vertical" VerticalOptions="Center">
+        <StackLayout><Label x:Name="Title"  Text="Pagar Compra" FontSize = "50" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"></Label>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal"  Padding="100,50,100,50">
+            <Label x:Name="Costo" Text="Costo Total" FontSize="30" HorizontalTextAlignment="Center" VerticalOptions="Center" Margin="20"></Label>
+            <Frame OutlineColor="DarkBlue" BackgroundColor="Transparent" WidthRequest="150" HeightRequest="50" >
+                <Entry x:Name="ingresar" TextColor="DarkBlue" HorizontalTextAlignment="Center" IsEnabled="False" Placeholder="00" BackgroundColor="Transparent"  WidthRequest="50" HeightRequest="50"  FontSize="20" VerticalOptions="Fill" HorizontalOptions="Fill"></Entry>
+            </Frame>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Padding="100,50,100,50">
+            <Label x:Name="tipo_moneda" Text="Tipo Moneda" FontSize="30" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center" Margin="10"></Label>
+            <Frame OutlineColor="DarkBlue" BackgroundColor="Transparent" WidthRequest="150" HeightRequest="50" >
+                <Entry x:Name="Moneda_" TextColor="DarkBlue" HorizontalTextAlignment="Center" IsEnabled="False" Placeholder="MXN" BackgroundColor="Transparent"  WidthRequest="50" HeightRequest="50"  FontSize="20" VerticalOptions="Fill" HorizontalOptions="Fill"></Entry>
+            </Frame>
+        </StackLayout>
+        <!--<StackLayout>
+            <Image Source="paypalnow.png" x:Name="Clickable_image"  HeightRequest="70" WidthRequest="200" VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                    Tapped="hola"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </StackLayout>-->
+        <StackLayout Padding="50,0,0,50">
+            <Image Source="paypalnow.png" x:Name="paypalImage"  HeightRequest="70" WidthRequest="200" VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                    Tapped="HandlePayPalExpressCheckoutButtonClicked"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </StackLayout>
+        <!--<Button x:Name="paypalButton" HeightRequest="70" WidthRequest="200" Text="Paga con PayPal" TextColor="DarkBlue" BackgroundColor="Yellow"
+                FontAttributes="Italic"
                 VerticalOptions="CenterAndExpand"
                 HorizontalOptions="Center"
-                Clicked="HandlePayPalExpressCheckoutButtonClicked" />
+                Clicked="hola">
+            <Button.Image>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS, Android" Value="paypalnow.png" />
+                </OnPlatform>
+            </Button.Image>
+        </Button>-->
 
     </StackLayout>
 
   
 </ContentPage>
+

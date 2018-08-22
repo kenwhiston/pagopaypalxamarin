@@ -20,7 +20,7 @@ namespace PagoPaypal.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(bundle);
-
+            Rg.Plugins.Popup.Popup.Init(this, bundle);
             SetIoc();
 
             global::Xamarin.Forms.Forms.Init(this, bundle);

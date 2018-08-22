@@ -5,11 +5,14 @@ using System.Net;
 using System.Diagnostics;
 using System.Linq;
 using RestSharp.Authenticators;
+using Xamarin.Forms;
+using Rg.Plugins.Popup.Services;
+using PagoPaypal.Pages;
 
 namespace PagoPaypal
 {
 
-	public class PayPalApiClient : IPayPalApiClient {
+	public class PayPalApiClient : ContentPage, IPayPalApiClient {
 		
 		RestClient restClient { get; set; }
 
@@ -149,9 +152,9 @@ namespace PagoPaypal
 
 					return "Something went wrong. Please try again.";
 				} else {
-
-					// everythings fine
-					return null;
+                    PopupNavigation.PushAsync(new SuccessPopUp());
+                    // everythings fine
+                    return null;
 				}
 			} else {
 

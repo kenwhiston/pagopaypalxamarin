@@ -1,9 +1,13 @@
 ﻿
+using PagoPaypal.Pages;
+using Rg.Plugins.Popup.Contracts;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using XLabs.Ioc;
@@ -13,16 +17,23 @@ namespace PagoPaypal
 	public partial class MainPage : ContentPage
 	{
         PayPalMakePaymentData infoPago;
-
+        string Cantidad = "400";
+        string Moneda = "";
         public MainPage()
 		{
 			InitializeComponent();
 		}
-
+        public MainPage(string cantidad, string moneda)
+        {
+            cantidad = "550";
+            moneda = "MXN";
+            InitializeComponent();
+            this.Cantidad = cantidad;
+            this.Moneda = moneda;
+        }
         async void HandlePayPalExpressCheckoutButtonClicked(object sender, EventArgs e)
         {
-
-
+            paypalImage.Source = "paypalnow_clicked.png";
             infoPago = new PayPalMakePaymentData
             {
                 intent = "sale",
@@ -38,8 +49,8 @@ namespace PagoPaypal
                 transactions = new[] {
                         new PayPalTransaction {
                             amount = new PayPalAmount {
-                                total = "550",
-                                currency = "MXN",
+                                total = Cantidad,
+                                currency = Moneda,
                                 details = new PayPalAmountDetails {
                                     subtotal = "500",
                                     tax = "25",
@@ -61,9 +72,9 @@ namespace PagoPaypal
                         }
                     }
             };
-
-            Device.BeginInvokeOnMainThread(() => paypalButton.IsEnabled = false);
-
+            paypalImage.Source = "paypalnow.png";
+            Device.BeginInvokeOnMainThread(() => paypalImage.IsEnabled = false);
+            
             await Resolver
                 .Resolve<IPayPalApiClient>()
                 .MakePayment(infoPago)
@@ -71,7 +82,7 @@ namespace PagoPaypal
                     var result = r.Result;
 
                     Device.BeginInvokeOnMainThread(() => {
-                        paypalButton.IsEnabled = true;
+                        paypalImage.IsEnabled = true;
 
                         if (result.DisplayError == null)
                         {
@@ -79,6 +90,7 @@ namespace PagoPaypal
                         }
                         else
                         {
+                            //PopupNavigation.PushAsync(new SuccesPupUp());
                             // display executePaymentData.DisplayError
                         }
                     });
