@@ -12,7 +12,7 @@ using PagoPaypal.Pages;
 namespace PagoPaypal
 {
 
-	public class PayPalApiClient : ContentPage, IPayPalApiClient {
+	public class PayPalApiClient : IPayPalApiClient {
 		
 		RestClient restClient { get; set; }
 

@@ -20,6 +20,20 @@
           "lib/netstandard2.0/RestSharp.dll": {}
         }
       },
+      "Rg.Plugins.Popup/1.1.4.168": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.5.0.121934"
+        },
+        "compile": {
+          "lib/Xamarin.IOS/Rg.Plugins.Popup.IOS.dll": {},
+          "lib/Xamarin.IOS/Rg.Plugins.Popup.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.IOS/Rg.Plugins.Popup.IOS.dll": {},
+          "lib/Xamarin.IOS/Rg.Plugins.Popup.dll": {}
+        }
+      },
       "Xamarin.Forms/3.0.0.561731": {
         "type": "package",
         "compile": {
@@ -221,6 +235,20 @@
         },
         "runtime": {
           "lib/netstandard2.0/RestSharp.dll": {}
+        }
+      },
+      "Rg.Plugins.Popup/1.1.4.168": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.5.0.121934"
+        },
+        "compile": {
+          "lib/Xamarin.IOS/Rg.Plugins.Popup.IOS.dll": {},
+          "lib/Xamarin.IOS/Rg.Plugins.Popup.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.IOS/Rg.Plugins.Popup.IOS.dll": {},
+          "lib/Xamarin.IOS/Rg.Plugins.Popup.dll": {}
         }
       },
       "Xamarin.Forms/3.0.0.561731": {
@@ -426,6 +454,20 @@
           "lib/netstandard2.0/RestSharp.dll": {}
         }
       },
+      "Rg.Plugins.Popup/1.1.4.168": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.5.0.121934"
+        },
+        "compile": {
+          "lib/Xamarin.IOS/Rg.Plugins.Popup.IOS.dll": {},
+          "lib/Xamarin.IOS/Rg.Plugins.Popup.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.IOS/Rg.Plugins.Popup.IOS.dll": {},
+          "lib/Xamarin.IOS/Rg.Plugins.Popup.dll": {}
+        }
+      },
       "Xamarin.Forms/3.0.0.561731": {
         "type": "package",
         "compile": {
@@ -627,6 +669,20 @@
         },
         "runtime": {
           "lib/netstandard2.0/RestSharp.dll": {}
+        }
+      },
+      "Rg.Plugins.Popup/1.1.4.168": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.5.0.121934"
+        },
+        "compile": {
+          "lib/Xamarin.IOS/Rg.Plugins.Popup.IOS.dll": {},
+          "lib/Xamarin.IOS/Rg.Plugins.Popup.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.IOS/Rg.Plugins.Popup.IOS.dll": {},
+          "lib/Xamarin.IOS/Rg.Plugins.Popup.dll": {}
         }
       },
       "Xamarin.Forms/3.0.0.561731": {
@@ -834,6 +890,34 @@
         "lib/netstandard2.0/RestSharp.dll",
         "restsharp.106.3.1.nupkg.sha512",
         "restsharp.nuspec"
+      ]
+    },
+    "Rg.Plugins.Popup/1.1.4.168": {
+      "sha512": "pARxyFFrnOoCZfRbAiE8v3+8py/sH5SX8NJAjfaydJJO3cm13yNaNw8EelEONJVQY2T0zFhCfZSc4CDjjaSylQ==",
+      "type": "package",
+      "path": "rg.plugins.popup/1.1.4.168",
+      "files": [
+        "lib/MonoAndroid/Rg.Plugins.Popup.Droid.dll",
+        "lib/MonoAndroid/Rg.Plugins.Popup.Droid.pdb",
+        "lib/MonoAndroid/Rg.Plugins.Popup.dll",
+        "lib/MonoAndroid/Rg.Plugins.Popup.pdb",
+        "lib/MonoTouch/Rg.Plugins.Popup.IOS.dll",
+        "lib/MonoTouch/Rg.Plugins.Popup.IOS.pdb",
+        "lib/MonoTouch/Rg.Plugins.Popup.dll",
+        "lib/MonoTouch/Rg.Plugins.Popup.pdb",
+        "lib/Xamarin.IOS/Rg.Plugins.Popup.IOS.dll",
+        "lib/Xamarin.IOS/Rg.Plugins.Popup.IOS.pdb",
+        "lib/Xamarin.IOS/Rg.Plugins.Popup.dll",
+        "lib/Xamarin.IOS/Rg.Plugins.Popup.pdb",
+        "lib/netstandard1.0/Rg.Plugins.Popup.dll",
+        "lib/netstandard1.0/Rg.Plugins.Popup.pdb",
+        "lib/uap10.0/Rg.Plugins.Popup.UWP.dll",
+        "lib/uap10.0/Rg.Plugins.Popup.UWP.pdb",
+        "lib/uap10.0/Rg.Plugins.Popup.dll",
+        "lib/uap10.0/Rg.Plugins.Popup.pdb",
+        "readme.txt",
+        "rg.plugins.popup.1.1.4.168.nupkg.sha512",
+        "rg.plugins.popup.nuspec"
       ]
     },
     "Xamarin.Forms/3.0.0.561731": {
@@ -1096,6 +1180,7 @@
     "Xamarin.iOS,Version=v1.0": [
       "ExifLib.PCL >= 1.0.1",
       "RestSharp >= 106.3.1",
+      "Rg.Plugins.Popup >= 1.1.4.168",
       "XLabs.Core >= 2.0.5782",
       "XLabs.Forms >= 2.0.5782",
       "XLabs.IoC >= 2.0.5782",
@@ -1105,20 +1190,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kenwhiston\\.nuget\\packages\\": {}
+    "C:\\Users\\Ernesto Chong\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\GIT\\pagopaypal\\PagoPaypal\\PagoPaypal\\PagoPaypal.iOS\\PagoPaypal.iOS.csproj",
+      "projectUniqueName": "F:\\JassGroup\\GIT\\pagopaypal\\PagoPaypal\\PagoPaypal\\PagoPaypal.iOS\\PagoPaypal.iOS.csproj",
       "projectName": "PagoPaypal.iOS",
-      "projectPath": "F:\\GIT\\pagopaypal\\PagoPaypal\\PagoPaypal\\PagoPaypal.iOS\\PagoPaypal.iOS.csproj",
-      "packagesPath": "C:\\Users\\kenwhiston\\.nuget\\packages\\",
-      "outputPath": "F:\\GIT\\pagopaypal\\PagoPaypal\\PagoPaypal\\PagoPaypal.iOS\\obj\\",
+      "projectPath": "F:\\JassGroup\\GIT\\pagopaypal\\PagoPaypal\\PagoPaypal\\PagoPaypal.iOS\\PagoPaypal.iOS.csproj",
+      "packagesPath": "C:\\Users\\Ernesto Chong\\.nuget\\packages\\",
+      "outputPath": "F:\\JassGroup\\GIT\\pagopaypal\\PagoPaypal\\PagoPaypal\\PagoPaypal.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\kenwhiston\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ernesto Chong\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1144,6 +1229,10 @@
           "RestSharp": {
             "target": "Package",
             "version": "[106.3.1, )"
+          },
+          "Rg.Plugins.Popup": {
+            "target": "Package",
+            "version": "[1.1.4.168, )"
           },
           "XLabs.Core": {
             "target": "Package",
