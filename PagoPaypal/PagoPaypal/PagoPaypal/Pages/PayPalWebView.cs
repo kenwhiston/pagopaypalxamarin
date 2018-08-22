@@ -2,6 +2,9 @@
 using Xamarin.Forms;
 using System.Collections.Generic;
 using XLabs.Ioc;
+using System.Diagnostics;
+using Rg.Plugins.Popup.Services;
+using PagoPaypal.Pages;
 
 namespace PagoPaypal
 {
@@ -43,33 +46,36 @@ namespace PagoPaypal
 						// execute the approved payment
 						executeResonseError = await Resolver
 							.Resolve<IPayPalApiClient> ()
-							.ExecuteApprovedPayment (queryItems ["PayerID"], accessToken, queryItems ["paymentId"]);	
-					}
+							.ExecuteApprovedPayment (queryItems ["PayerID"], accessToken, queryItems ["paymentId"]);
+                        Debug.WriteLine(" PROCESO Execute Response");
+                    }
 
 					// check if the api call returned any errors
 					if (executeResonseError != null) {
-						// display executeResonseError
-
-						// navigate back to the previous page
-						await Navigation.PopAsync();
+                        // display executeResonseError
+                        Debug.Write(" PROCESO TERMINADO RESPONSE ERROR");
+                        // navigate back to the previous page
+                        await Navigation.PopAsync();
 					} else {
-						// display success
-
-						// navigate back to the previous page
-						await Navigation.PopAsync();
-					}
-				// check if the webview is navigating to the cancel url -- user canceled the purchase
-				} else if (uri.Host == Config.CancelHost) {
-					// prevent navigating to execute again and to come back here
-					browser.Navigating -= HandleNavigating;
+                        // display success
+                        Debug.Write(" PROCESO TERMINADO OK");
+                        PopupNavigation.PushAsync(new SuccessPopUp());
+                        // navigate back to the previous page
+                        await Navigation.PopAsync();
+                    }
+                    // check if the webview is navigating to the cancel url -- user canceled the purchase
+                } else if (uri.Host == Config.CancelHost) {
+                    // prevent navigating to execute again and to come back here
+                    Debug.Write(" PROCESO TERMINADO CANCEL");
+                    browser.Navigating -= HandleNavigating;
 					// navigate back to the previous page
 					await Navigation.PopAsync ();
 				}
 			} else {
-				// display error message
-
-				// navigate back to the previous page
-				await Navigation.PopAsync ();
+                // display error message
+                Debug.Write(" PROCESO TERMINADO ERROR MSG");
+                // navigate back to the previous page
+                await Navigation.PopAsync ();
 			}
 		}
 

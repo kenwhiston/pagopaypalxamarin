@@ -152,7 +152,7 @@ namespace PagoPaypal
 
 					return "Something went wrong. Please try again.";
 				} else {
-                    PopupNavigation.PushAsync(new SuccessPopUp());
+                    
                     // everythings fine
                     return null;
 				}

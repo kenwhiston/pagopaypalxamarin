@@ -17,8 +17,7 @@ namespace PagoPaypal.Pages
     /// <summary>
     /// Una página vacía que se puede usar de forma independiente o a la que se puede navegar dentro de un objeto Frame.
     /// </summary>
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public sealed partial class SuccessPopUp : PopupPage
+    public partial class SuccessPopUp : PopupPage
     {
         public SuccessPopUp()
         {
@@ -27,6 +26,7 @@ namespace PagoPaypal.Pages
         async void OnClosePopUp(object sender, EventArgs e)
         {
             await PopupNavigation.PopAllAsync();
+            //await Navigation.PopAsync();
         }
         
     }

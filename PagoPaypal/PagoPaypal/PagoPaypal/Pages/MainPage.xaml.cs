@@ -17,8 +17,8 @@ namespace PagoPaypal
 	public partial class MainPage : ContentPage
 	{
         PayPalMakePaymentData infoPago;
-        string Cantidad = "400";
-        string Moneda = "";
+        string Cantidad = "550";
+        string Moneda = "MXN";
         public MainPage()
 		{
 			InitializeComponent();
