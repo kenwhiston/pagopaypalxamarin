@@ -5,18 +5,18 @@
              x:Class="PagoPaypal.MainPage" Title="PayPal">
 
     <StackLayout Orientation="Vertical" VerticalOptions="Center">
-        <StackLayout><Label x:Name="Title"  Text="Pagar Compra" FontSize = "50" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"></Label>
+        <StackLayout><Label x:Name="Title"  Text="Pagar Compra" FontSize = "32" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"></Label>
         </StackLayout>
-        <StackLayout Orientation="Horizontal"  Padding="100,50,100,50">
-            <Label x:Name="Costo" Text="Costo Total" FontSize="30" HorizontalTextAlignment="Center" VerticalOptions="Center" Margin="20"></Label>
-            <Frame OutlineColor="DarkBlue" BackgroundColor="Transparent" WidthRequest="150" HeightRequest="50" >
-                <Entry x:Name="ingresar" TextColor="DarkBlue" HorizontalTextAlignment="Center" IsEnabled="False" Placeholder="00" BackgroundColor="Transparent"  WidthRequest="50" HeightRequest="50"  FontSize="20" VerticalOptions="Fill" HorizontalOptions="Fill"></Entry>
+        <StackLayout Orientation="Horizontal"  Padding="20,20,20,20">
+            <Label x:Name="Costo" Text="Costo Total" FontSize="16" HorizontalTextAlignment="Center" VerticalOptions="Center" Margin="0"></Label>
+            <Frame OutlineColor="DarkBlue" BackgroundColor="Transparent" WidthRequest="60" HeightRequest="50" >
+                <Entry x:Name="etMonto" TextColor="DarkBlue" HorizontalTextAlignment="Center" IsEnabled="False" Placeholder="00" BackgroundColor="Transparent"  WidthRequest="60" HeightRequest="30"  FontSize="16" VerticalOptions="Fill" HorizontalOptions="Fill"></Entry>
             </Frame>
         </StackLayout>
-        <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Padding="100,50,100,50">
-            <Label x:Name="tipo_moneda" Text="Tipo Moneda" FontSize="30" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center" Margin="10"></Label>
-            <Frame OutlineColor="DarkBlue" BackgroundColor="Transparent" WidthRequest="150" HeightRequest="50" >
-                <Entry x:Name="Moneda_" TextColor="DarkBlue" HorizontalTextAlignment="Center" IsEnabled="False" Placeholder="MXN" BackgroundColor="Transparent"  WidthRequest="50" HeightRequest="50"  FontSize="20" VerticalOptions="Fill" HorizontalOptions="Fill"></Entry>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Padding="20,20,20,20">
+            <Label x:Name="tipo_moneda" Text="Tipo Moneda" FontSize="16" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center" Margin="0"></Label>
+            <Frame OutlineColor="DarkBlue" BackgroundColor="Transparent" WidthRequest="60" HeightRequest="50" >
+                <Entry x:Name="etMoneda" TextColor="DarkBlue" HorizontalTextAlignment="Center" IsEnabled="False" Placeholder="MXN" BackgroundColor="Transparent"  WidthRequest="60" HeightRequest="30"  FontSize="16" VerticalOptions="Fill" HorizontalOptions="Fill"></Entry>
             </Frame>
         </StackLayout>
         <!--<StackLayout>

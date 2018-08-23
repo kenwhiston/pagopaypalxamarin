@@ -22,7 +22,10 @@ namespace PagoPaypal
         public MainPage()
 		{
 			InitializeComponent();
-		}
+            //inicializamos
+            etMonto.Text = this.Cantidad;
+            etMoneda.Text = this.Moneda;
+        }
         public MainPage(string cantidad, string moneda)
         {
             cantidad = "550";
@@ -30,6 +33,11 @@ namespace PagoPaypal
             InitializeComponent();
             this.Cantidad = cantidad;
             this.Moneda = moneda;
+
+            //inicializamos
+            etMonto.Text = this.Cantidad;
+            etMoneda.Text = this.Moneda;
+
         }
         async void HandlePayPalExpressCheckoutButtonClicked(object sender, EventArgs e)
         {
