@@ -28,6 +28,10 @@ namespace PagoPaypal.Pages
             await PopupNavigation.PopAllAsync();
             //await Navigation.PopAsync();
         }
-        
+        async void Enviar_email_recibo(object sender, EventArgs e)
+        {
+            //await PopupNavigation.PopAllAsync();
+            //await Navigation.PopAsync();
+        }
     }
 }

@@ -1,33 +1,165 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
     <pages:PopupPage
-    x:Class="PagoPaypal.Pages.SuccessPopUp"
-    xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
-    xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
-    xmlns:local="using:PagoPaypal.Pages">
+        x:Class="PagoPaypal.Pages.SuccessPopUp"
+        xmlns="http://xamarin.com/schemas/2014/forms"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+        xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+        xmlns:local="using:PagoPaypal.Pages"
+        CloseWhenBackgroundIsClicked="False"
+        >
     <!--Animations use example-->
     <pages:PopupPage.Animation>
-        <animations:ScaleAnimation 
-      PositionIn="Center"
-      PositionOut="Center"
-      ScaleIn="1.2"
-      ScaleOut="0.8"
-      DurationIn="400"
-      DurationOut="300"
-      EasingIn="SinOut"
-      EasingOut="SinIn"
-      HasBackgroundAnimation="true"/>
+        <animations:ScaleAnimation
+            
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8"
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="true"/>
     </pages:PopupPage.Animation>
     <!-- Content -->
-    <StackLayout HeightRequest="500"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Frame CornerRadius="10" HeightRequest="400" WidthRequest="400" Padding="10" BackgroundColor="White" HorizontalOptions="FillAndExpand">
-            <StackLayout Padding="10" Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                <Label Text="SE HA CONCRETADO LA COMPRA" Margin="10" TextColor="DarkBlue"></Label>
-                <Button x:Name="BotonOK" Clicked="OnClosePopUp" Text="OK" Margin="20" HorizontalOptions="Fill" VerticalOptions="Center"></Button>
-            </StackLayout>
-        </Frame>
-    </StackLayout>
 
-        
+    <StackLayout Padding="0" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="AliceBlue" HeightRequest="600" WidthRequest="350"  >
+        <StackLayout  Orientation="Vertical" x:Name="UserConst">
+            <Grid BackgroundColor="Transparent" RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <StackLayout Padding="0" Grid.Row="0">
+                    <Image HeightRequest="150"
+                               WidthRequest="150" Source="tick_ok.png" x:Name="Success">
+                    </Image>
+                </StackLayout>
+
+                <StackLayout Padding="60,0,60,0"  Grid.Row="1">
+                    <Label  TextColor="Black"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="SU PAGO20 SE HA PROCESADO CON EXITO !!" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+        <StackLayout Grid.Row="2">
+            <Image BackgroundColor="Gray" Grid.Row="0"></Image>
+        </StackLayout>
+        <StackLayout Padding="30,0" HeightRequest="40" >
+            <Grid Padding="0,0"   HorizontalOptions="Center">
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width="30*"/>
+                    <ColumnDefinition Width="70*"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0"  HeightRequest="40" WidthRequest="30" HorizontalOptions="EndAndExpand" Source="paypal_icon.png" x:Name="pay"/>
+                <Label Grid.Column="1" HorizontalTextAlignment="Start"  HorizontalOptions="StartAndExpand" Text="Account ID ends " FontSize="17" TextColor="Black" VerticalOptions="CenterAndExpand"/>
+            </Grid>
+        </StackLayout>
+
+        <StackLayout>
+            <Grid ColumnSpacing="2"  Padding="40,10" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label HorizontalTextAlignment="Start" VerticalOptions="CenterAndExpand" Text="SubTotal" Grid.Row="0" Grid.Column="0" TextColor="Gray"/>
+                <Label HorizontalTextAlignment="End" VerticalOptions="CenterAndExpand" Text="$" Grid.Row="0" Grid.Column="1" TextColor="Gray"/>
+                <Label HorizontalTextAlignment="Start" VerticalOptions="CenterAndExpand" Text="400" Grid.Row="0" Grid.Column="2" TextColor="Gray"/>
+            </Grid>
+        </StackLayout>
+
+        <StackLayout>
+            <Grid ColumnSpacing="2"  Padding="40,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label HorizontalTextAlignment="Start" VerticalOptions="CenterAndExpand" Text="Impuesto/Interes" Grid.Row="0" Grid.Column="0" TextColor="Gray"/>
+                <Label HorizontalTextAlignment="End" VerticalOptions="CenterAndExpand" Text="$" Grid.Row="0" Grid.Column="1" TextColor="Gray"/>
+                <Label HorizontalTextAlignment="Start" VerticalOptions="CenterAndExpand" Text="10000" Grid.Row="0" Grid.Column="2" TextColor="Gray"/>
+            </Grid>
+        </StackLayout>
+
+        <StackLayout>
+            <Grid ColumnSpacing="2"  Padding="40,10" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label FontAttributes="Bold" HorizontalTextAlignment="Start"    Text="Total" FontSize="15" TextColor="Gray"  Grid.Row="0" Grid.Column="0"/>
+                <Label FontAttributes="Bold" HorizontalTextAlignment="End"      Text="$"     FontSize="15" TextColor="Gray" Grid.Row="0" Grid.Column="1"/>
+                <Label FontAttributes="Bold" HorizontalTextAlignment="Start"    Text="20000"    FontSize="15" TextColor="Gray" Grid.Row="0" Grid.Column="2"/>
+            </Grid>
+        </StackLayout>
+
+        <StackLayout  Grid.Row="2">
+            <Image BackgroundColor="Gray" Grid.Row="0"></Image>
+        </StackLayout>
+
+        <StackLayout >
+            <Grid ColumnSpacing="2"  Padding="40,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label FontAttributes="Bold" HorizontalTextAlignment="Center"   BackgroundColor="BurlyWood"  Text="-   "        FontSize="15" TextColor="Gray"  Grid.Row="0" Grid.Column="0"/>
+                <Label FontAttributes="Bold" HorizontalTextAlignment="Start"    Text="Fecha"   FontSize="15" TextColor="Gray" Grid.Row="0" Grid.Column="1"/>
+                <Label FontAttributes="Bold" HorizontalTextAlignment="End"    Text="25/08/18 - 11:00 Hrs"    FontSize="15" TextColor="Gray" Grid.Row="0" Grid.Column="2"/>
+            </Grid>
+        </StackLayout>
+        <StackLayout >
+            <Grid ColumnSpacing="2"  Padding="40,10" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label FontAttributes="Bold" HorizontalTextAlignment="Center"  VerticalOptions="Center" BackgroundColor="BurlyWood" Text="-   " FontSize="15" VerticalTextAlignment="Center" TextColor="Gray"  Grid.Row="0" Grid.Column="0"/>
+                <Label FontAttributes="Bold" HorizontalTextAlignment="Start"      Text="ID de la Operacion " FontSize="15" TextColor="Gray" Grid.Row="0" Grid.Column="1"/>
+                <Label FontAttributes="Bold" HorizontalTextAlignment="End"    Text="SSASD5554A" FontSize="15" TextColor="Gray" Grid.Row="0" Grid.Column="2"/>
+            </Grid>
+        </StackLayout>
+        <StackLayout Padding="30,0" >
+            <Frame Padding="1" Grid.Row="0" HasShadow="False" HorizontalOptions="FillAndExpand" CornerRadius="20" OutlineColor="Black" BackgroundColor="White">
+                <Frame Padding="0" HasShadow="False" HorizontalOptions="FillAndExpand" CornerRadius="15" OutlineColor="Gray" BackgroundColor="Transparent">
+                    <Image  Margin="30,0" WidthRequest="200" HeightRequest="50"  Source="ok.png">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                            Tapped="OnClosePopUp"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+            </Frame>
+            <Frame Padding="1" Grid.Row="0" HasShadow="False" HorizontalOptions="FillAndExpand" CornerRadius="20" OutlineColor="Black" BackgroundColor="White">
+                <Frame Padding="0" HasShadow="False" HorizontalOptions="FillAndExpand" CornerRadius="15" OutlineColor="Gray" BackgroundColor="Transparent">
+                    <Image Margin="30,0" WidthRequest="200" HeightRequest="50" Source="mail_icon.png">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Enviar_email_recibo"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+            </Frame>
+        </StackLayout>
+
+    </StackLayout>
 </pages:PopupPage>

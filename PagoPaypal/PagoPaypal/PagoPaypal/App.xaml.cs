@@ -1,3 +1,4 @@
+using PagoPaypal.Pages;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -13,7 +14,7 @@ namespace PagoPaypal
 
             ///MainPage = new MainPage();
             // The root page of your application
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new PaymentPage());
         }
 
 		protected override void OnStart ()

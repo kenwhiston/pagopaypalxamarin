@@ -31,8 +31,9 @@ namespace PagoPaypal
 			if (!String.IsNullOrWhiteSpace (e.Url)) {
 				// convert url to uri which gives us additional functionality and more flexability over the url
 				var uri = new Uri (e.Url);
+                
 
-				if (uri.Host == Config.ReturnHost) {
+                if (uri.Host == Config.ReturnHost) {
 					// prevent navigating to execute again and to come back here
 					browser.Navigating -= HandleNavigating;
 

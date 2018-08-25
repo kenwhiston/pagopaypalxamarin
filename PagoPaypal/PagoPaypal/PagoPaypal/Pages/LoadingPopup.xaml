@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage
+    x:Class="PagoPaypal.Pages.LoadingPopup"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+    xmlns:local="using:PagoPaypal.Pages"
+    CloseWhenBackgroundIsClicked="False"
+    >
+    <!--Animations use example-->
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation 
+      PositionIn="Center"
+      PositionOut="Center"
+      ScaleIn="1.2"
+      ScaleOut="0.8"
+      DurationIn="400"
+      DurationOut="300"
+      EasingIn="SinOut"
+      EasingOut="SinIn"
+      
+      HasBackgroundAnimation="true"/>
+    </pages:PopupPage.Animation>
+    <!-- Content -->
+    <StackLayout HeightRequest="300" WidthRequest="300" BackgroundColor="Transparent"   VerticalOptions="Center">
+        <AbsoluteLayout BackgroundColor="Transparent" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <ActivityIndicator x:Name="activityIndicator" IsRunning="True" HorizontalOptions="CenterAndExpand" Color="DeepSkyBlue" WidthRequest="150" HeightRequest="150" >
+            </ActivityIndicator>
+            <Image AbsoluteLayout.LayoutBounds=".5,1,.5,1" AbsoluteLayout.LayoutFlags="All" BackgroundColor="Transparent" Source="lock.png" x:Name="paypalImage"  HeightRequest="60"
+                       WidthRequest="60"
+                       HorizontalOptions="Center"
+                       VerticalOptions="CenterAndExpand">
+            </Image>
+        </AbsoluteLayout>
+
+        <Label Text="Loading..." FontSize="20" VerticalOptions="StartAndExpand" HorizontalOptions="Center" TextColor="SkyBlue"></Label>
+    </StackLayout>
+
+
+</pages:PopupPage>

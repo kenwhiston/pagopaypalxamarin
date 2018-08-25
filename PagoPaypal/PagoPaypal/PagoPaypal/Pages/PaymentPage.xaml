@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PagoPaypal.Pages.PaymentPage"
+             BackgroundColor="Wheat"
+             BackgroundImage="bg.jpg">
+    <!--<ContentPage.Content>-->
+    <StackLayout Spacing="0">
+        
+        <StackLayout Orientation="Horizontal" x:Name="UserConst">
+            <Grid Padding="10,10" BackgroundColor="LightBlue" HeightRequest="100" ColumnSpacing="8" HorizontalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="25*" />
+                </Grid.ColumnDefinitions>
+                <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="USER" Grid.Column="0" HorizontalOptions="FillAndExpand"/>
+                <Image Source="user_icon.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="1"/>
+                <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="PAGO" Grid.Column="2" HorizontalOptions="FillAndExpand"/>
+            </Grid>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" x:Name="UserConst2">
+            <Grid Padding="10,10" BackgroundColor="Transparent" HeightRequest="60" ColumnSpacing="8" HorizontalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="25*" />
+                </Grid.ColumnDefinitions>
+                <Label x:Name="etMoneda" HorizontalTextAlignment="Center" FontSize="10" VerticalTextAlignment="Center" IsEnabled="False" Text="MXN" Grid.Column="0" HorizontalOptions="Center"/>
+                <Label HorizontalTextAlignment="Center" FontAttributes="Italic" FontSize="20" VerticalTextAlignment="End" Text="Pagando" Grid.Column="1" HorizontalOptions="FillAndExpand"/>
+                <Label HorizontalTextAlignment="Center" FontSize="10" VerticalTextAlignment="Center" Text="08/23" Grid.Column="2" HorizontalOptions="FillAndExpand"/>
+            </Grid>
+        </StackLayout>
+        <StackLayout>
+            <Grid  BackgroundColor="Transparent" HeightRequest="130">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label HorizontalTextAlignment="End" VerticalTextAlignment="Start" FontSize="50" Text="$" Grid.Row="0" Grid.Column="0"/>
+                <Label x:Name="etMonto" HorizontalTextAlignment="Center" VerticalTextAlignment="End" FontSize="80" Text="00000" Grid.Row="0" Grid.Column="1"/>
+                <!--<Label HorizontalTextAlignment="End" FontSize="70" Text="$" Grid.Row="0" Grid.Column="2" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand"/>-->
+            </Grid>
+        </StackLayout>
+        <StackLayout Orientation="Vertical"  x:Name="UserConst3">
+            <Grid Padding="20"  HeightRequest="180"  HorizontalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="Name" HorizontalTextAlignment="Center" FontAttributes="Bold" VerticalTextAlignment="End" Text="Name" Grid.Row="0" FontSize="20" HorizontalOptions="FillAndExpand"/>
+                <Label x:Name="Description" HorizontalTextAlignment="Center" VerticalTextAlignment="End" Text="Whiston Borja" Grid.Row="1" FontSize="25" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+            </Grid>
+        </StackLayout>
+
+        <StackLayout Margin="50,10">
+            <Grid BackgroundColor="Transparent" HeightRequest="120" ColumnSpacing="8" HorizontalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100*"/>
+                </Grid.RowDefinitions>
+                <Frame Padding="2" Grid.Row="0" HasShadow="False" HorizontalOptions="FillAndExpand" CornerRadius="20" OutlineColor="Black" BackgroundColor="Gray">
+                    <Frame Padding="5" HasShadow="False" HorizontalOptions="FillAndExpand" CornerRadius="15" OutlineColor="Gray" BackgroundColor="Transparent">
+                        <Label  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="Whistogn.Borja@gmail.com" FontSize="20" HeightRequest="100" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+                    </Frame>
+                </Frame>
+            </Grid>
+        </StackLayout>
+        
+        <StackLayout>
+            <Grid  BackgroundColor="Transparent" HeightRequest="80" ColumnSpacing="8" HorizontalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100*"/>
+                </Grid.RowDefinitions>
+                <Label HorizontalTextAlignment="Center" VerticalTextAlignment="End" Text="Detalles de la transaccion" Grid.Row="0" HorizontalOptions="FillAndExpand"/>
+            </Grid>
+        </StackLayout>
+        
+        <StackLayout>
+            <Grid Padding="50,10" BackgroundColor="Transparent" HeightRequest="300" ColumnSpacing="8" HorizontalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="33*"/>
+                    <RowDefinition Height="33*"/>
+                    <RowDefinition Height="33*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*"/>
+                    <ColumnDefinition Width="50*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Impuesto ..." Grid.Row="0" Grid.Column="0"  HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                <Label Text="Forma de Pago ..." Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                <Label Text="Fecha de Transaccion" Grid.Row="2" Grid.Column="0" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                <Label Text="0.00" Grid.Row="0" Grid.Column="1" x:Name="Tax" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End" VerticalTextAlignment="Center"/>
+                <Label Text="Paypal" Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End" VerticalTextAlignment="Center"/>
+                <Label Text="24/08/2018" Grid.Row="2" Grid.Column="1" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End" VerticalTextAlignment="Center"/>
+            </Grid>
+        </StackLayout>
+        <StackLayout>
+            <Grid Padding="10,10" BackgroundColor="LightBlue" HeightRequest="150" ColumnSpacing="8" HorizontalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50*"/>
+                </Grid.RowDefinitions>
+                <Image Source="paypalnow.png" x:Name="paypalImage"  HeightRequest="70" WidthRequest="200" VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                    Tapped="HandlePayPalExpressCheckoutButtonClicked"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+        </StackLayout>
+    </StackLayout>
+        
+    <!--</ContentPage.Content>-->
+</ContentPage>
