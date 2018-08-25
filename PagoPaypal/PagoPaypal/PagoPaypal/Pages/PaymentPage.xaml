@@ -28,7 +28,7 @@
                     <ColumnDefinition Width="25*" />
                 </Grid.ColumnDefinitions>
                 <Label x:Name="etMoneda" HorizontalTextAlignment="Center" FontSize="10" VerticalTextAlignment="Center" IsEnabled="False" Text="MXN" Grid.Column="0" HorizontalOptions="Center"/>
-                <Label HorizontalTextAlignment="Center" FontAttributes="Italic" FontSize="20" VerticalTextAlignment="End" Text="Pagando" Grid.Column="1" HorizontalOptions="FillAndExpand"/>
+                <Label HorizontalTextAlignment="Center" FontAttributes="Italic" FontSize="16" VerticalTextAlignment="End" Text="Pagando" Grid.Column="1" HorizontalOptions="FillAndExpand"/>
                 <Label HorizontalTextAlignment="Center" FontSize="10" VerticalTextAlignment="Center" Text="08/23" Grid.Column="2" HorizontalOptions="FillAndExpand"/>
             </Grid>
         </StackLayout>
@@ -53,8 +53,8 @@
                     <RowDefinition Height="30*"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <Label x:Name="Name" HorizontalTextAlignment="Center" FontAttributes="Bold" VerticalTextAlignment="End" Text="Name" Grid.Row="0" FontSize="20" HorizontalOptions="FillAndExpand"/>
-                <Label x:Name="Description" HorizontalTextAlignment="Center" VerticalTextAlignment="End" Text="Whiston Borja" Grid.Row="1" FontSize="25" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                <Label x:Name="Name" HorizontalTextAlignment="Center" FontAttributes="Bold" VerticalTextAlignment="End" Text="Name" Grid.Row="0" FontSize="18" HorizontalOptions="FillAndExpand"/>
+                <Label x:Name="Description" HorizontalTextAlignment="Center" VerticalTextAlignment="End" Text="Whiston Borja" Grid.Row="1" FontSize="16" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
             </Grid>
         </StackLayout>
 
@@ -65,7 +65,7 @@
                 </Grid.RowDefinitions>
                 <Frame Padding="2" Grid.Row="0" HasShadow="False" HorizontalOptions="FillAndExpand" CornerRadius="20" OutlineColor="Black" BackgroundColor="Gray">
                     <Frame Padding="5" HasShadow="False" HorizontalOptions="FillAndExpand" CornerRadius="15" OutlineColor="Gray" BackgroundColor="Transparent">
-                        <Label  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="Whistogn.Borja@gmail.com" FontSize="20" HeightRequest="100" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+                        <Label  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="wborja@gmail.com" FontSize="14" HeightRequest="100" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
                     </Frame>
                 </Frame>
             </Grid>
@@ -93,7 +93,7 @@
                 </Grid.ColumnDefinitions>
                 <Label Text="Impuesto ..." Grid.Row="0" Grid.Column="0"  HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
                 <Label Text="Forma de Pago ..." Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
-                <Label Text="Fecha de Transaccion" Grid.Row="2" Grid.Column="0" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                <Label Text="Fecha" Grid.Row="2" Grid.Column="0" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
                 <Label Text="0.00" Grid.Row="0" Grid.Column="1" x:Name="Tax" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End" VerticalTextAlignment="Center"/>
                 <Label Text="Paypal" Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End" VerticalTextAlignment="Center"/>
                 <Label Text="24/08/2018" Grid.Row="2" Grid.Column="1" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End" VerticalTextAlignment="Center"/>

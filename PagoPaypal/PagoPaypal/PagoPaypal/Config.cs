@@ -12,11 +12,11 @@ namespace PagoPaypal
 		const string ProductionApiUrl = "https://api.paypal.com/v1";
 
 		// Client Id
-		const string DevelopmentApiClientId = "AfHuxESzuwIgRlkIsrVkiS1NqDrAmdUv7pworEvXqAxI9_WY2QjgX5xTHpzpy1EGdN5ms6r-QWBLSyMy";
+		const string DevelopmentApiClientId = "AX0wlnujV6SAr87nBe63_Ma4YrkAmNp4nnp82WmzyuT2Ch4Tmg82aFj5VAN4rxpd8bYJoIGWF8s4ZHwI";
 		const string ProductionApiClientId = "";
 
 		// Secret
-		const string DevelopmentApiSecret = "EFkSSEuxjj4d4ATNkjAG_2J637WJ-aj8VKteA67vzaWfrdzj5m1DSRjdepAVP1iq4_Rb7NEsDwZtnEC9";
+		const string DevelopmentApiSecret = "EFrRPLCHPaGTbyhz9WXzgwKR79ygNzOSwW-xiVbIOuEYhEF8awgkJzKimClu-W61tY6UU-AGsS1bkFyO";
 		const string ProductionApiSecret = "";
 
 		public const string ReturnUrl = "http://www.google.com/";

@@ -192,9 +192,6 @@
     <BundleResource Include="Resources\ok.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\fondo_ok.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\tick_ok.png" />
   </ItemGroup>
   <ItemGroup>
